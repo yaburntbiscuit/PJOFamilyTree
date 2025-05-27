@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Family Tree</title>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .mermaid {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="mermaid">
+graph BT
+    A[Emily Pulver] -->|daughter of| B[Athena]
+    A[Emily Pulver] -->|daughter of| C[Robert Pulver]
+    C[Robert Pulver] -->|husband of| D[Giovanna Pulver]
+    C[Robert Pulver] -->|son of| E[Warren Pulver]
+    C[Robert Pulver] -->|son of| F[Mildred Pulver]
+    E[Warren Pulver] -->|related to| L[Descendants of Athenian Kings]
+    F[Mildred Pulver] -->|daughter of| H[Cole Porter]
+    F[Mildred Pulver] -->|daughter of| I[Linda Porter]
+    H[Cole Porter] -->|son of| J[Apollo]
+    H[Cole Porter] -->|son of| K[Kate Cole]
+    L[Descendants of Athenian Kings] ---|related to| M[Other Athenian Kings]
+    M[Other Athenian Kings] ---|related to| G[King Erichthonius of Athens]
+
+    click A "https://www.notion.so/about-me-04cb0d9423f049b0b7a3ea6fbbd8da36?pvs=4"
+    click B "https://www.notion.so/mother-ec94082fc9504c7f85f9420bc2a1e3c7?pvs=4"
+    click C "https://www.notion.so/father-f02b6eda61fd42599d6a313b52a95051?pvs=4"
+    click D "https://www.notion.so/stepmother-c9d8829e036c4b77a0c78a9b2dc380e4?pvs=4"
+    click E "https://example.com/warren"
+    click F "https://example.com/mildred"
+    click G "https://example.com/erichthonius"
+    click H "https://example.com/cole"
+    click I "https://example.com/linda"
+    click J "https://example.com/apollo"
+    click K "https://example.com/kate"
+
+    classDef male fill:#ADD8E6,stroke:#000,stroke-width:2px,color:#000;
+    classDef female fill:#FFB6C1,stroke:#000,stroke-width:2px,color:#000;
+    classDef apollo fill:#D4AF37,stroke:#000,stroke-width:2px,color:#000;
+    classDef athena fill:#A8A9AD,stroke:#000,stroke-width:2px,color:#000;
+    classDef king fill:#B2AC88,stroke:#000,stroke-width:2px,color:#000;
+    classDef ancestors fill:#FFFFFF,stroke:#000,stroke-width:2px,color:#000;
+
+    class A,D,F,I,K female;
+    class C,E,G,H male;
+    class J apollo;
+    class B athena;
+    class G king;
+    class L,M ancestors
+    </div>
+</body>
+</html>
